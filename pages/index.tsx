@@ -5,6 +5,8 @@ import styles from '../styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
+const backgroundColor = "#313131"
+
 export default function Home() {
   return (
     <>
@@ -16,7 +18,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         {" "}
-        <h1> Hello World</h1>
+        <h1 className={styles.garageHack}> Purdue Hackers GarageHack 2023 </h1>
 
         
       </main>

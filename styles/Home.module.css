@@ -1,11 +1,14 @@
 .main {
+  /* define a background color to use
+     throughout the website */
+  --backgroundColor: #313131;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
-  background-color: #313131;
+  background-color: var(--backgroundColor);
 }
 
 .description {
@@ -250,6 +253,17 @@
     z-index: 1;
   }
 }
+  .garageHack {
+    /* credit:  https://colorhunt.co/palette/72147ef21170fa9905ff5200 */
+    color: rgb(250, 153, 5);
+    -webkit-text-stroke: 1px rgb(255, 82, 0);
+    transition: all .2s ease-in-out;
+  }
+
+  .garageHack:hover {
+    color: var(--backgroundColor);
+    transform: scale(1.12);
+  }
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {

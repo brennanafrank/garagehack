@@ -9,6 +9,7 @@
   padding: 6rem;
   min-height: 100vh;
   background-color: var(--backgroundColor);
+  font-family: sans-serif;
 }
 
 .description {
@@ -253,16 +254,31 @@
     z-index: 1;
   }
 }
+  .navbar {
+    gap: 30px;
+    float: left;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    left: 50px;
+    top: 20px;
+    align-items: center;
+  }
+
+  /* red text "neon sign" */
   .garageHack {
-    /* credit:  https://colorhunt.co/palette/72147ef21170fa9905ff5200 */
+    /* I'm still experimenting with the colors */
     color: rgb(250, 153, 5);
-    -webkit-text-stroke: 1px rgb(255, 82, 0);
+    -webkit-text-stroke: 1px rgb(254, 161, 191);
     transition: all .2s ease-in-out;
+    text-shadow: 0 0 40px rgb(255, 198, 211);;
+    margin-right: .37rem;
   }
 
   .garageHack:hover {
     color: var(--backgroundColor);
     transform: scale(1.12);
+    text-shadow: 0 0 0 #000000;
   }
 
 /* Tablet and Smaller Desktop */

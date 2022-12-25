@@ -1,4 +1,7 @@
-.main {
+/* div contained in components/Layout.tsx 
+   This is the "default styling" used in-place
+   of .main */
+.root {
   /* define a background color to use
      throughout the website */
   --backgroundColor: #313131;

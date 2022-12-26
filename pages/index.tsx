@@ -18,7 +18,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}> </main>
+      <main className={styles.main}>
+        <h1 className={styles.coding}>Coding, but in a parking garage</h1>
+        <p>That could be cool, bring your friends!</p>
+      </main>
     </>
   );
 }

@@ -5,6 +5,10 @@
   /* define a background color to use
      throughout the website */
   --backgroundColor: #313131;
+  /* These two are seen in the upper-left
+     corner heading */
+  --insideColor: rgb(255, 198, 211);
+  --outsideColor: rgb(250, 153, 5);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,6 +17,11 @@
   min-height: 100vh;
   background-color: var(--backgroundColor);
   font-family: sans-serif;
+}
+
+.coding {
+  font-size: 3.4rem;
+  color: linear-gradient(var(--outsideColor), var(--insideColor));
 }
 
 .description {
@@ -151,11 +160,9 @@
   inset: 0;
   padding: 1px;
   border-radius: var(--border-radius);
-  background: linear-gradient(
-    to bottom right,
-    rgba(var(--tile-start-rgb), 1),
-    rgba(var(--tile-end-rgb), 1)
-  );
+  background: linear-gradient(to bottom right,
+      rgba(var(--tile-start-rgb), 1),
+      rgba(var(--tile-end-rgb), 1));
   background-clip: content-box;
 }
 
@@ -234,11 +241,9 @@
     border-radius: 0;
     border: none;
     border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
+    background: linear-gradient(to bottom,
+        rgba(var(--background-start-rgb), 1),
+        rgba(var(--callout-rgb), 0.5));
     background-clip: padding-box;
     backdrop-filter: blur(24px);
   }
@@ -249,40 +254,43 @@
     inset: auto 0 0;
     padding: 2rem;
     height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        rgb(var(--background-end-rgb)) 40%);
     z-index: 1;
   }
 }
-  .navbar {
-    gap: 30px;
-    float: left;
-    display: flex;
-    justify-content: center;
-    position: fixed;
-    left: 50px;
-    top: 20px;
-    align-items: center;
-  }
 
-  /* red text "neon sign" */
-  .garageHack {
-    /* I'm still experimenting with the colors */
-    color: rgb(250, 153, 5);
-    -webkit-text-stroke: 1px rgb(254, 161, 191);
-    transition: all .2s ease-in-out;
-    text-shadow: 0 0 40px rgb(255, 198, 211);;
-    margin-right: .37rem;
-  }
+.navbar {
+  gap: 30px;
+  float: left;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 50px;
+  top: 20px;
+  align-items: center;
+}
 
-  .garageHack:hover {
-    color: var(--backgroundColor);
-    transform: scale(1.12);
-    text-shadow: 0 0 0 #000000;
-  }
+/* red text "neon sign" */
+.garageHack {
+  /* I'm still experimenting with the colors */
+  color: var(--insideColor);
+  /* the text outline */
+  -webkit-text-stroke: 1px var(--outsideColor);
+  transition: all .2s ease-in-out;
+  /* highlight neon "glow" effect */
+  text-shadow: 0 0 40px var(--insideColor);
+  margin-right: .37rem;
+}
+
+.garageHack:hover {
+  color: var(--backgroundColor);
+  transform: scale(1.12);
+  /* gets rid of glow effect
+  neon sign "burns out" */
+  text-shadow: 0 0 0 #000000;
+}
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
@@ -306,6 +314,7 @@
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }

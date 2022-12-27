@@ -21,7 +21,11 @@
 
 .coding {
   font-size: 3.4rem;
-  color: linear-gradient(var(--outsideColor), var(--insideColor));
+  background: -webkit-linear-gradient(right, var(--outsideColor), 
+  var(--insideColor));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: .8rem;
 }
 
 .description {

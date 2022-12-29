@@ -1,12 +1,12 @@
-#page-container {
+/* This is the "default styling" used in-place
+  of .main */
+.pageContainer {
   --startGrad: rgb(255, 198, 211);
   --endGrad: rgb(250, 153, 5);
-
 }
-/* div contained in components/Layout.tsx 
-   This is the "default styling" used in-place
-   of .main */
-.root {
+
+/* div contained in components/Layout.tsx  */
+.layout {
   /* define a background color to use
      throughout the website */
   --backgroundColor: #313131;
@@ -26,7 +26,7 @@
 
 .coding {
   font-size: 3.4rem;
-  background: -webkit-linear-gradient(right, var(--startGrad), 
+  background: -webkit-linear-gradient(left, var(--startGrad), 
   var(--endGrad));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

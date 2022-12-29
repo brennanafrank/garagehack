@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import React, { useState, createContext, useRef } from "react";
+import styles from "../styles/Home.module.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const myRef = useRef<HTMLDivElement>(null);
@@ -18,12 +19,24 @@ export default function App({ Component, pageProps }: AppProps) {
     console.log(myRef.current);
     const pageContainer = myRef.current;
     if (pageContainer != null) {
-      console.log(pageContainer.getAttribute("display"));
+      console.log(
+        getComputedStyle(pageContainer).getPropertyValue("--startGrad")
+      );
+      if (MousePosition.left > 400) {
+        pageContainer.style.setProperty("--startGrad", "purple");
+      }
+    }
+
+    if (MousePosition.left > 400) {
     }
   };
 
   return (
-    <div onMouseMove={(ev) => handleMouseMove(ev)} ref={myRef}>
+    <div
+      onMouseMove={(ev) => handleMouseMove(ev)}
+      ref={myRef}
+      className={styles.pageContainer}
+    >
       <Layout>
         <Component {...pageProps} />
       </Layout>

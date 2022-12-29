@@ -5,7 +5,7 @@ import React, { useState } from "react";
 export default function Layout({ children }) {
   var myRef = React.createRef();
   return (
-    <div className={styles.root} ref={myRef}>
+    <div className={styles.layout} ref={myRef}>
       <Navbar />
       <main>{children}</main>
     </div>

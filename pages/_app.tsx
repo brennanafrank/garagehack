@@ -17,14 +17,24 @@ export default function App({ Component, pageProps }: AppProps) {
     console.log(MousePosition.left);
     console.log(document);
     console.log(myRef.current);
+
     const pageContainer = myRef.current;
-    if (pageContainer != null) {
-      console.log(
-        getComputedStyle(pageContainer).getPropertyValue("--startGrad")
-      );
-      if (MousePosition.left > 400) {
-        pageContainer.style.setProperty("--startGrad", "purple");
-      }
+    /* for every 90th of the screen right, startGrad loses 1 rgb value for
+    green and blue while endGrad loses 1 rgb value for green only */
+    if (pageContainer != null && screen.width > 599) {
+      var offset = Math.floor(MousePosition.left / (screen.width / 90));
+      offset *= 2;
+
+      const newStartGrad =
+        "rgb(" + 255 + ", " + (198 - offset) + ", " + (211 - offset) + ")";
+      const newEndGrad =
+        "rgb(" + 250 + ", " + (153 + offset) + ", " + (5 + offset) + ")";
+
+      // reconfigure startGrad and endGrad to be the new value
+      pageContainer.style.setProperty("--startGrad", newStartGrad);
+      pageContainer.style.setProperty("--endGrad", newEndGrad);
+      console.log("sending " + newStartGrad);
+      console.log("sending " + newEndGrad);
     }
 
     if (MousePosition.left > 400) {

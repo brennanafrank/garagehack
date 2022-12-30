@@ -18,6 +18,7 @@ export default function App({ Component, pageProps }: AppProps) {
     console.log(document);
     console.log(myRef.current);
     const pageContainer = myRef.current;
+    /* for each 90th of the width of  right, startGrad loses*/
     if (pageContainer != null) {
       console.log(
         getComputedStyle(pageContainer).getPropertyValue("--startGrad")
@@ -25,6 +26,9 @@ export default function App({ Component, pageProps }: AppProps) {
       if (MousePosition.left > 400) {
         pageContainer.style.setProperty("--startGrad", "purple");
       }
+    }
+
+    if (pageContainer != null && screen.width > 599) {
     }
 
     if (MousePosition.left > 400) {
@@ -43,3 +47,5 @@ export default function App({ Component, pageProps }: AppProps) {
     </div>
   );
 }
+
+export const getCodingRef = () => useRef<HTMLHeadingElement>(null);

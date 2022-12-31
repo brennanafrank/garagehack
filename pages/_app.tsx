@@ -22,22 +22,18 @@ export default function App({ Component, pageProps }: AppProps) {
     /* for every 90th of the screen right, startGrad loses 1 rgb value for
     green and blue while endGrad loses 1 rgb value for green only */
     if (pageContainer != null && screen.width > 599) {
-      var offset = Math.floor(MousePosition.left / (screen.width / 90));
-      offset *= 2;
+      const offset = Math.floor(MousePosition.left / (screen.width / 180));
 
       const newStartGrad =
-        "rgb(" + 255 + ", " + (198 - offset) + ", " + (211 - offset) + ")";
+        "rgb(" + 245 + ", " + (184 - offset) + ", " + (208 - offset) + ")";
       const newEndGrad =
-        "rgb(" + 250 + ", " + (153 + offset) + ", " + (5 + offset) + ")";
+        "rgb(" + 245 + ", " + (4 + offset) + ", " + (28 + offset) + ")";
 
       // reconfigure startGrad and endGrad to be the new value
       pageContainer.style.setProperty("--startGrad", newStartGrad);
       pageContainer.style.setProperty("--endGrad", newEndGrad);
       console.log("sending " + newStartGrad);
       console.log("sending " + newEndGrad);
-    }
-
-    if (MousePosition.left > 400) {
     }
   };
 

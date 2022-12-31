@@ -1,8 +1,8 @@
 /* This is the "default styling" used in-place
   of .main */
 .pageContainer {
-  --startGrad: rgb(255, 198, 211);
-  --endGrad: rgb(250, 153, 5);
+  --startGrad: rgb(245, 184, 208);
+  --endGrad: rgb(245, 4, 28);
 }
 
 /* div contained in components/Layout.tsx  */
@@ -12,8 +12,8 @@
   --backgroundColor: #313131;
   /* These two are seen in the upper-left
      corner heading */
-  --insideColor: rgb(255, 198, 211);
-  --outsideColor: rgb(250, 153, 5);
+  --insideColor: rgb(245, 184, 208);
+  --outsideColor: rgb(255, 113, 84);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
